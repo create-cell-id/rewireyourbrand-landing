@@ -478,43 +478,81 @@ function WhoItsFor() {
   )
 }
 
+// ─── FAQ ──────────────────────────────────────────────────────────────────────
+
+const faqs = [
+  {
+    q: 'Do I need professional equipment?',
+    a: 'No. An iPhone and decent lighting is all you need to film. We handle everything that makes the content look and sound professional.',
+  },
+  {
+    q: 'How quickly can I go live?',
+    a: 'Most clients are publishing content within 14 days of signing on. Onboarding is fast because we do the heavy lifting.',
+  },
+  {
+    q: 'What platforms do you post on?',
+    a: 'Instagram, LinkedIn, and YouTube. Every piece of content is reformatted and optimised for each platform.',
+  },
+  {
+    q: 'What if I have no audience yet?',
+    a: 'That is exactly who this is built for. We have taken founders from zero to thousands of followers using organic content only.',
+  },
+  {
+    q: 'How is this different from hiring a social media manager?',
+    a: 'A social media manager posts content. We build the strategy, write every script, produce and edit it, and manage your community. It is a full content operation, not just someone scheduling posts.',
+  },
+  {
+    q: 'How much does it cost?',
+    a: 'We do not list pricing publicly because it depends on your goals and what we are building. Book a call and we will walk you through what makes sense.',
+  },
+]
+
+function FAQ() {
+  return (
+    <section className="py-16 lg:py-24 border-t border-border bg-surface">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
+        <div className="mb-10">
+          <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
+            FAQ
+          </p>
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink leading-tight">
+            Common Questions
+          </h2>
+        </div>
+        <div className="grid lg:grid-cols-2 gap-px bg-border">
+          {faqs.map((faq) => (
+            <div key={faq.q} className="bg-surface p-8 lg:p-10">
+              <h3 className="font-display text-lg font-semibold text-ink mb-3 leading-snug">{faq.q}</h3>
+              <p className="text-muted text-base font-body leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ─── FINAL CTA ────────────────────────────────────────────────────────────────
 
 function FinalCTA() {
   return (
-    <section className="py-20 lg:py-28 border-t border-border relative overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(59,130,246,0.08) 0%, transparent 70%)',
-        }}
-      />
-      <div className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center">
-        <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-tight mb-6">
-          Every week you wait is another week a founder with less experience owns the attention that should be yours.
+    <section className="py-16 lg:py-20 border-t border-border text-center">
+      <div className="max-w-2xl mx-auto px-6 lg:px-10">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-ink leading-tight mb-8">
+          Book a 30-Minute Strategy Call
         </h2>
-        <p className="text-muted text-lg leading-relaxed max-w-xl mx-auto mb-10 font-body">
-          We take on a limited number of clients each month. Apply today and we will confirm fit within 24 hours.
-        </p>
         <a
           href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-accent text-white text-base font-body font-semibold px-10 py-4 hover:bg-[#1D4ED8] transition-colors duration-200"
         >
-          Book a Strategy Call
+          Book a Call
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path
-              d="M3.75 9h10.5M10.5 5.25L14.25 9l-3.75 3.75"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+            <path d="M3.75 9h10.5M10.5 5.25L14.25 9l-3.75 3.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
-        <p className="text-muted text-sm font-body mt-5">
+        <p className="text-muted text-sm font-body mt-6">
           No obligation, 30 minutes, and you will know exactly what we would build for you.
         </p>
       </div>
@@ -582,6 +620,7 @@ export default function Home() {
       <Process />
       <Results />
       <WhoItsFor />
+      <FAQ />
       <FinalCTA />
       <Footer />
     </main>
