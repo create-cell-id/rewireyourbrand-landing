@@ -437,46 +437,38 @@ function WhoItsFor() {
   return (
     <section className="py-16 lg:py-24 bg-surface border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-[280px_1fr] gap-12 lg:gap-20">
-          <div>
-            <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium">
-              Is This Right For You?
-            </p>
+        <div className="mb-10">
+          <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
+            Is This Right For You?
+          </p>
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink leading-tight max-w-3xl">
+            Built for founders who are ready to stop being invisible.
+          </h2>
+        </div>
+        <div className="grid lg:grid-cols-2 gap-px bg-border">
+          <div className="bg-surface p-8 lg:p-10 space-y-5">
+            {forList.map((item) => (
+              <div key={item} className="flex gap-4">
+                <span className="text-accent mt-1 shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+                    <path d="M3 9l4.5 4.5 7.5-9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                <p className="text-ink text-base font-body leading-relaxed">{item}</p>
+              </div>
+            ))}
           </div>
-          <div>
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink leading-tight mb-12">
-              Built for founders who are ready to stop being invisible.
-            </h2>
-            <div className="space-y-4 mb-10">
-              {forList.map((item) => (
+          <div className="bg-surface p-8 lg:p-10">
+            <p className="text-muted text-xs tracking-widest2 uppercase font-body font-medium mb-6">
+              Not a Good Fit If
+            </p>
+            <div className="space-y-5">
+              {notForList.map((item) => (
                 <div key={item} className="flex gap-4">
-                  <span className="text-accent mt-0.5 shrink-0">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path
-                        d="M3 9l4.5 4.5 7.5-9"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-ink text-base font-body leading-relaxed">{item}</p>
+                  <span className="text-muted mt-1 shrink-0 text-sm">✕</span>
+                  <p className="text-muted text-base font-body leading-relaxed">{item}</p>
                 </div>
               ))}
-            </div>
-            <div className="border-t border-border pt-8">
-              <p className="text-muted text-xs tracking-widest2 uppercase font-body font-medium mb-4">
-                Not a Fit If…
-              </p>
-              <div className="space-y-3">
-                {notForList.map((item) => (
-                  <div key={item} className="flex gap-4">
-                    <span className="text-muted mt-0.5 shrink-0">✕</span>
-                    <p className="text-muted text-base font-body leading-relaxed">{item}</p>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
