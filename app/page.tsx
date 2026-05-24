@@ -113,7 +113,7 @@ function Stats() {
 
   return (
     <section className="border-t border-b border-border bg-surface">
-      <div ref={containerRef} className="max-w-7xl mx-auto px-6 lg:px-12 py-4">
+      <div ref={containerRef} className="max-w-[1440px] mx-auto px-6 lg:px-10 py-4">
         <style>{`
           .stats-row {
             display: flex;
@@ -182,7 +182,7 @@ function Stats() {
 function Problem() {
   return (
     <section className="py-16 lg:py-24 border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text */}
           <div>
@@ -211,6 +211,7 @@ function Problem() {
               alt="Isaac De Persig"
               className="w-full h-full object-cover object-top"
               style={{ filter: 'grayscale(100%) contrast(1.05)' }}
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
           </div>
@@ -283,13 +284,13 @@ const services = [
 function Services() {
   return (
     <section className="py-16 lg:py-24 border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
         <div className="mb-10">
           <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
             What We Do
           </p>
           <h2 className="font-display text-3xl lg:text-5xl font-bold text-ink leading-tight max-w-2xl">
-            We&apos;re the Team You Don&apos;t Have to Hire
+            The Full Content System, Built and Run For You
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 gap-px bg-border">
@@ -331,7 +332,7 @@ const steps = [
 function Process() {
   return (
     <section id="how-it-works" className="py-16 lg:py-24 bg-surface border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
         <div className="mb-10">
           <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
             How It Works
@@ -343,7 +344,7 @@ function Process() {
         <div className="grid md:grid-cols-3 gap-px bg-border">
           {steps.map((s) => (
             <div key={s.num} className="bg-surface p-8 lg:p-10">
-              <div className="font-display text-6xl font-bold text-accent/30 mb-8 leading-none select-none">
+              <div className="font-display text-6xl font-bold text-accent/50 mb-6 leading-none select-none">
                 {s.num}
               </div>
               <h3 className="font-display text-xl font-semibold text-ink mb-3">{s.title}</h3>
@@ -388,7 +389,7 @@ const results = [
 function Results() {
   return (
     <section className="py-16 lg:py-24 border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
         <div className="mb-10">
           <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
             Client Results
@@ -436,7 +437,7 @@ const notForList = [
 function WhoItsFor() {
   return (
     <section className="py-16 lg:py-24 bg-surface border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
         <div className="mb-10">
           <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
             Is This Right For You?
@@ -526,7 +527,7 @@ function FinalCTA() {
 function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-12">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
           {/* Brand */}
           <div>
