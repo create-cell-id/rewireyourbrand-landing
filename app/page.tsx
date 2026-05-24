@@ -48,70 +48,62 @@ function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 80% 70% at 30% 50%, transparent 40%, #080C18 100%)',
+            'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(59,130,246,0.06) 0%, transparent 70%)',
         }}
       />
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full py-20 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="relative max-w-5xl mx-auto px-6 lg:px-12 w-full py-20 text-center">
 
-          {/* Text */}
-          <div>
-            <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-8">
-              Rewire Your Brand
-            </p>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-ink leading-[1.05] tracking-tight mb-8">
-              You Know Your Stuff.{' '}
-              <em className="not-italic text-gradient-gold">The Internet Doesn&apos;t Know You Yet.</em>
-            </h1>
-            <p className="text-muted text-lg lg:text-xl leading-relaxed max-w-xl mb-10 font-body">
-              We build the content system that puts you in front of the right people every week — scripting, editing, posting, and managing your DMs — so you can stay focused on running your business.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-accent text-white text-sm font-body font-semibold px-8 py-4 hover:bg-[#1D4ED8] transition-colors duration-200"
-              >
-                Book a Strategy Call
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </a>
-              <a
-                href="#how-it-works"
-                className="inline-flex items-center justify-center gap-2 border border-border text-ink text-sm font-body font-medium px-8 py-4 hover:border-border-light transition-colors duration-200"
-              >
-                See how it works
-              </a>
-            </div>
-          </div>
+        {/* Eyebrow */}
+        <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-8">
+          Rewire Your Brand
+        </p>
 
-          {/* Video */}
-          <div className="hidden lg:flex flex-col gap-3">
-            <div
-              className="relative w-full aspect-video overflow-hidden"
-              style={{ boxShadow: '0 0 0 1px #1A2442, 0 0 60px rgba(59,130,246,0.12)' }}
-            >
-              <iframe
-                src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=1`}
-                title="Rewire Your Brand — Watch This First"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              />
-            </div>
-            <div className="flex items-center justify-between px-1">
-              <p className="text-muted text-xs font-body tracking-wide">
-                ▶ Watch — 4 min
-              </p>
-              <p className="text-muted text-xs font-body">
-                Why most founders stay invisible
-              </p>
-            </div>
-          </div>
+        {/* Headline */}
+        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-ink leading-[1.05] tracking-tight mb-6">
+          You Know Your Stuff.{' '}
+          <em className="not-italic text-gradient-gold">The Internet Doesn&apos;t Know You Yet.</em>
+        </h1>
 
+        {/* Sub headline */}
+        <p className="text-muted text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto mb-12 font-body">
+          You press record. We handle everything after — scripting, editing, posting, DM management, and a full KPI report every month. You run the business. We build the audience.
+        </p>
+
+        {/* Video */}
+        <div
+          className="relative w-full aspect-video mb-10 overflow-hidden"
+          style={{ boxShadow: '0 0 0 1px #1A2442, 0 0 80px rgba(59,130,246,0.14)' }}
+        >
+          <iframe
+            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=1`}
+            title="Rewire Your Brand — Watch This First"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full"
+          />
         </div>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-accent text-white text-sm font-body font-semibold px-8 py-4 hover:bg-[#1D4ED8] transition-colors duration-200"
+          >
+            Book a Strategy Call
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+          <a
+            href="#how-it-works"
+            className="inline-flex items-center justify-center gap-2 border border-border text-ink text-sm font-body font-medium px-8 py-4 hover:border-border-light transition-colors duration-200"
+          >
+            See how it works
+          </a>
+        </div>
+
       </div>
     </section>
   )
