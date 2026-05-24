@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
 
 const BOOKING_URL = 'https://api.leadconnectorhq.com/widget/bookings/rewireyourbrand'
 const YOUTUBE_VIDEO_ID = 'fpK6HFwHJHE'
@@ -45,7 +44,6 @@ function Nav({ scrolled }: { scrolled: boolean }) {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center hero-grid overflow-hidden pt-16">
-      {/* Radial vignette to soften grid at edges */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -54,21 +52,19 @@ function Hero() {
         }}
       />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full py-20 lg:py-0">
-        <div className="grid lg:grid-cols-[1fr_420px] gap-16 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-[1fr_480px] gap-12 lg:gap-16 items-center">
+
           {/* Text */}
           <div>
             <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-8">
-              Content Strategy for Founders
+              Rewire Your Brand
             </p>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-ink leading-[1.05] tracking-tight mb-8">
-              Your Content Should Be{' '}
-              <em className="not-italic text-gradient-gold">Working</em> as Hard
-              as You Do.
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-ink leading-[1.05] tracking-tight mb-8">
+              You Know Your Stuff.{' '}
+              <em className="not-italic text-gradient-gold">The Internet Doesn&apos;t Know You Yet.</em>
             </h1>
             <p className="text-muted text-lg lg:text-xl leading-relaxed max-w-xl mb-10 font-body">
-              We build the scripting system, content calendar, and distribution
-              engine for founders who want to grow their audience without turning
-              content into a second full-time job.
+              We build the content system that puts you in front of the right people every week — scripting, editing, posting, and managing your DMs — so you can stay focused on running your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -79,13 +75,7 @@ function Hero() {
               >
                 Book a Strategy Call
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M3 8h10M9 4l4 4-4 4"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
               <a
@@ -97,28 +87,20 @@ function Hero() {
             </div>
           </div>
 
-          {/* Photo */}
+          {/* Video */}
           <div className="hidden lg:block relative">
-            <div className="relative aspect-[4/5] border border-border overflow-hidden">
-              <Image
-                src="/isaac.png"
-                alt="Isaac De Persig — Rewire Your Brand"
-                fill
-                className="object-cover object-top grayscale"
-                priority
-              />
-              {/* Subtle gradient overlay at bottom */}
-              <div
-                className="absolute bottom-0 left-0 right-0 h-1/3 pointer-events-none"
-                style={{
-                  background:
-                    'linear-gradient(to top, #080C18 0%, transparent 100%)',
-                }}
+            <div className="relative w-full aspect-video border border-border overflow-hidden">
+              <iframe
+                src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=1`}
+                title="Rewire Your Brand — Watch This First"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
               />
             </div>
-            {/* Accent border detail */}
             <div className="absolute -bottom-3 -right-3 w-full h-full border border-accent/20 pointer-events-none" />
           </div>
+
         </div>
       </div>
     </section>
@@ -226,32 +208,6 @@ function Stats() {
             <div className="counter-display">0</div>
             <div className="counter-subtitle">Organic Meetings Booked</div>
           </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── VIDEO ────────────────────────────────────────────────────────────────────
-
-function VideoSection() {
-  return (
-    <section className="py-24 lg:py-32 border-t border-border bg-surface">
-      <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-        <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-6">
-          Watch: How the Sprint Works
-        </p>
-        <h2 className="font-display text-2xl lg:text-3xl font-bold text-ink mb-10">
-          If you want to rewire your brand, watch this first.
-        </h2>
-        <div className="relative w-full aspect-video border border-border overflow-hidden">
-          <iframe
-            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&autoplay=1&mute=1`}
-            title="How the Rewire Your Brand Sprint Works"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="absolute inset-0 w-full h-full"
-          />
         </div>
       </div>
     </section>
@@ -687,7 +643,6 @@ export default function Home() {
       <Nav scrolled={scrolled} />
       <Hero />
       <Stats />
-      <VideoSection />
       <Problem />
       <Services />
       <Process />
