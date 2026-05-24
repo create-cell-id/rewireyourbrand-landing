@@ -55,13 +55,13 @@ function Hero() {
 
         {/* Headline */}
         <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-ink leading-[1.05] tracking-tight mb-6">
-          You&apos;re Good at What You Do.{' '}
-          <em className="not-italic text-gradient-gold">Someone Half as Qualified Is Getting the Deals.</em>
+          You Don&apos;t Need a Production Team.{' '}
+          <em className="not-italic text-gradient-gold">You Need an iPhone and a Strategy.</em>
         </h1>
 
         {/* Sub headline */}
-        <p className="text-muted text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto mb-12 font-body">
-          You press record. We handle everything after: scripting, editing, posting, DM management, and a full KPI report every month. You run the business. We build the audience.
+        <p className="text-muted text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto mb-10 font-body">
+          Film a short session on your phone each week. We write the scripts, edit the content, post across your platforms, manage your DMs, and send you the numbers every month.
         </p>
 
         {/* Video */}
@@ -215,7 +215,7 @@ function Stats() {
 
 function Problem() {
   return (
-    <section className="py-24 lg:py-36">
+    <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-[280px_1fr] gap-12 lg:gap-20">
           <div>
@@ -225,23 +225,17 @@ function Problem() {
           </div>
           <div>
             <h2 className="font-display text-3xl lg:text-5xl font-bold text-ink leading-tight mb-8">
-              You've built something real. But the founders who need you
-              can't find you.
+              Most founders think content means hiring a team. That&apos;s why they never start.
             </h2>
             <div className="space-y-5 text-muted text-lg leading-relaxed max-w-2xl">
               <p>
-                You've thought about content. You've started and stopped. You've
-                watched founders with half your expertise close deals from
-                Instagram and LinkedIn while your calendar fills with referrals
-                you can't scale.
+                You picture studios, editors, a social media manager, a creative director. You calculate what it costs in time and money and decide to wait until you&apos;re more ready.
               </p>
               <p>
-                The problem isn't motivation. It isn't even time. It's that you've
-                never had a system that runs without you having to figure it out
-                from scratch every single week.
+                Meanwhile founders with less experience, filming on their phones, are closing deals from content every single week. They&apos;re not better at what they do. They just stopped waiting for perfect.
               </p>
               <p className="text-ink font-medium">
-                Rewire Your Brand is that system.
+                Rewire Your Brand removes every barrier between you and a content system that actually works.
               </p>
             </div>
           </div>
@@ -313,14 +307,14 @@ const services = [
 
 function Services() {
   return (
-    <section className="py-24 lg:py-36 border-t border-border">
+    <section className="py-16 lg:py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="mb-16">
+        <div className="mb-10">
           <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
-            What We Build for You
+            What We Do
           </p>
           <h2 className="font-display text-3xl lg:text-5xl font-bold text-ink leading-tight max-w-2xl">
-            Everything That Runs After You Film
+            We&apos;re the Team You Don&apos;t Have to Hire
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 gap-px bg-border">
@@ -355,15 +349,15 @@ const steps = [
   {
     num: '03',
     title: 'You Film. We Run It.',
-    body: 'Show up on camera. We handle every step after: edits, captions, posting, DMs, and monthly KPI reporting.',
+    body: 'Film a short session on your phone each week. We handle every step after: edits, captions, posting, DMs, and your monthly KPI report.',
   },
 ]
 
 function Process() {
   return (
-    <section id="how-it-works" className="py-24 lg:py-36 bg-surface border-t border-border">
+    <section id="how-it-works" className="py-16 lg:py-24 bg-surface border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="mb-16">
+        <div className="mb-10">
           <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
             How It Works
           </p>
@@ -418,9 +412,9 @@ const results = [
 
 function Results() {
   return (
-    <section className="py-24 lg:py-36 border-t border-border">
+    <section className="py-16 lg:py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="mb-16">
+        <div className="mb-10">
           <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
             Client Results
           </p>
@@ -466,7 +460,7 @@ const notForList = [
 
 function WhoItsFor() {
   return (
-    <section className="py-24 lg:py-36 bg-surface border-t border-border">
+    <section className="py-16 lg:py-24 bg-surface border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-[280px_1fr] gap-12 lg:gap-20">
           <div>
@@ -520,7 +514,7 @@ function WhoItsFor() {
 
 function FinalCTA() {
   return (
-    <section className="py-32 lg:py-40 border-t border-border relative overflow-hidden">
+    <section className="py-20 lg:py-28 border-t border-border relative overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
