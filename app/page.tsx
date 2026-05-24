@@ -20,9 +20,9 @@ function Hero() {
       <div className="relative max-w-5xl mx-auto px-6 lg:px-12 w-full py-10 text-center">
 
         {/* Headline */}
-        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-ink leading-[1.05] tracking-tight mb-6">
-          You Don&apos;t Need a Production Team.{' '}
-          <em className="not-italic text-gradient-gold">You Need an iPhone and a Strategy.</em>
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-[1.1] tracking-tight mb-6">
+          You&apos;ve been watching less qualified founders{' '}
+          <em className="not-italic text-gradient-gold">build the audience that should have been yours.</em>
         </h1>
 
         {/* Sub headline */}
@@ -181,29 +181,38 @@ function Stats() {
 
 function Problem() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-16 lg:py-24 border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-[280px_1fr] gap-12 lg:gap-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Text */}
           <div>
-            <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium">
+            <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-6">
               The Problem
             </p>
-          </div>
-          <div>
             <h2 className="font-display text-3xl lg:text-5xl font-bold text-ink leading-tight mb-8">
               Most founders think content means hiring a team. That&apos;s why they never start.
             </h2>
-            <div className="space-y-5 text-muted text-lg leading-relaxed max-w-2xl">
+            <div className="space-y-5 text-muted text-lg leading-relaxed">
               <p>
                 You picture studios, editors, a social media manager, a creative director. You calculate what it costs in time and money and decide to wait until you&apos;re more ready.
               </p>
               <p>
-                Meanwhile founders with less experience, filming on their phones, are closing deals from content every single week. They&apos;re not better at what they do. They just stopped waiting for perfect.
+                Meanwhile founders with less experience, filming on their phones, are closing deals from content every single week. They are not better at what they do. They just stopped waiting for perfect.
               </p>
               <p className="text-ink font-medium">
                 Rewire Your Brand removes every barrier between you and a content system that actually works.
               </p>
             </div>
+          </div>
+          {/* Editorial photo — drop isaac-bw.jpg into public/ */}
+          <div className="hidden lg:block relative h-[520px] overflow-hidden">
+            <img
+              src="/isaac-bw.jpg"
+              alt="Isaac De Persig"
+              className="w-full h-full object-cover object-top"
+              style={{ filter: 'grayscale(100%) contrast(1.05)' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent" />
           </div>
         </div>
       </div>
@@ -314,7 +323,7 @@ const steps = [
   },
   {
     num: '03',
-    title: 'You Film. We Run It.',
+    title: 'Your Only Job Is to Film',
     body: 'Film a short session on your phone each week. We handle every step after: edits, captions, posting, DMs, and your monthly KPI report.',
   },
 ]
@@ -334,7 +343,7 @@ function Process() {
         <div className="grid md:grid-cols-3 gap-px bg-border">
           {steps.map((s) => (
             <div key={s.num} className="bg-surface p-8 lg:p-10">
-              <div className="font-display text-6xl font-bold text-border mb-8 leading-none select-none">
+              <div className="font-display text-6xl font-bold text-accent/30 mb-8 leading-none select-none">
                 {s.num}
               </div>
               <h3 className="font-display text-xl font-semibold text-ink mb-3">{s.title}</h3>
@@ -489,17 +498,11 @@ function FinalCTA() {
         }}
       />
       <div className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center">
-        <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-6">
-          Ready to Start?
-        </p>
         <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-tight mb-6">
-          Stop Being Invisible.
-          <br />
-          Start Building Your Audience.
+          Every week you wait is another week a founder with less experience owns the attention that should be yours.
         </h2>
         <p className="text-muted text-lg leading-relaxed max-w-xl mx-auto mb-10 font-body">
-          We take on a small number of new clients each month. Apply now and
-          we&apos;ll confirm fit within 24 hours.
+          We take on a limited number of clients each month. Apply today and we will confirm fit within 24 hours.
         </p>
         <a
           href={BOOKING_URL}
@@ -519,7 +522,7 @@ function FinalCTA() {
           </svg>
         </a>
         <p className="text-muted text-sm font-body mt-5">
-          No obligation. 30 minutes. We&apos;ll tell you exactly what we&apos;d build for you.
+          No obligation, 30 minutes, and you will know exactly what we would build for you.
         </p>
       </div>
     </section>
@@ -530,55 +533,45 @@ function FinalCTA() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border py-10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-6">
-        <span className="font-display text-base font-bold text-ink">
-          Rewire Your Brand
-        </span>
-        <div className="flex items-center gap-6">
-          <a
-            href="https://instagram.com/isaacdpersig"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="text-muted hover:text-ink transition-colors duration-200"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" />
-              <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-            </svg>
-          </a>
-          <a
-            href="https://youtube.com/@isaacdpersig"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-            className="text-muted hover:text-ink transition-colors duration-200"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M22.54 6.42A2.78 2.78 0 0020.6 4.46C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 001.46 6.42C1 8.15 1 12 1 12s0 3.85.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96C23 15.85 23 12 23 12s0-3.85-.46-5.58z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-              <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-            </svg>
-          </a>
-          <a
-            href="mailto:hello@rewireyourbrand.com"
-            aria-label="Email"
-            className="text-muted hover:text-ink transition-colors duration-200"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" />
-              <path d="M2 7l10 7 10-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-          </a>
+    <footer className="border-t border-border bg-surface">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          {/* Brand */}
+          <div>
+            <span className="font-display text-xl font-bold text-ink tracking-tight block mb-2">
+              Rewire Your Brand
+            </span>
+            <p className="text-muted text-sm font-body max-w-xs">
+              Done-with-you content strategy for founders who are ready to stop being invisible online.
+            </p>
+          </div>
+          {/* Links + socials */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+            <div className="flex flex-col gap-2">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted hover:text-ink transition-colors font-body">Book a Call</a>
+              <a href="https://mycontent.rewireyourbrand.com" className="text-sm text-muted hover:text-ink transition-colors font-body">Client Login</a>
+              <a href="mailto:hello@rewireyourbrand.com" className="text-sm text-muted hover:text-ink transition-colors font-body">hello@rewireyourbrand.com</a>
+            </div>
+            <div className="flex items-center gap-5">
+              <a href="https://instagram.com/isaacdpersig" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted hover:text-ink transition-colors duration-200">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" />
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                </svg>
+              </a>
+              <a href="https://youtube.com/@isaacdpersig" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-muted hover:text-ink transition-colors duration-200">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M22.54 6.42A2.78 2.78 0 0020.6 4.46C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 001.46 6.42C1 8.15 1 12 1 12s0 3.85.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96C23 15.85 23 12 23 12s0-3.85-.46-5.58z" stroke="currentColor" strokeWidth="1.5" />
+                  <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
-        <p className="text-muted text-xs font-body">
-          © 2026 Rewire Your Brand. All rights reserved.
-        </p>
+        <div className="border-t border-border mt-10 pt-6">
+          <p className="text-muted text-xs font-body">© 2025 Rewire Your Brand</p>
+        </div>
       </div>
     </footer>
   )
