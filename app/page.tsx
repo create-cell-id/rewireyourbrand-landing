@@ -196,7 +196,7 @@ function Stats() {
           }
           .counter-subtitle {
             font-size: 13px;
-            color: #8C9BB4;
+            color: #B4C2D4;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.12em;

@@ -14,7 +14,7 @@ const config: Config = {
         border: '#1A2442',
         'border-light': '#243060',
         ink: '#FFFFFF',
-        muted: '#8C9BB4',
+        muted: '#B4C2D4',
         accent: '#3B82F6',
         'accent-dim': '#1D4ED8',
       },
