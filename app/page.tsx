@@ -52,7 +52,7 @@ function Hero() {
         }}
       />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full py-20 lg:py-0">
-        <div className="grid lg:grid-cols-[1fr_480px] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Text */}
           <div>
@@ -88,8 +88,11 @@ function Hero() {
           </div>
 
           {/* Video */}
-          <div className="hidden lg:block relative">
-            <div className="relative w-full aspect-video border border-border overflow-hidden">
+          <div className="hidden lg:flex flex-col gap-3">
+            <div
+              className="relative w-full aspect-video overflow-hidden"
+              style={{ boxShadow: '0 0 0 1px #1A2442, 0 0 60px rgba(59,130,246,0.12)' }}
+            >
               <iframe
                 src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=1`}
                 title="Rewire Your Brand — Watch This First"
@@ -98,7 +101,14 @@ function Hero() {
                 className="absolute inset-0 w-full h-full"
               />
             </div>
-            <div className="absolute -bottom-3 -right-3 w-full h-full border border-accent/20 pointer-events-none" />
+            <div className="flex items-center justify-between px-1">
+              <p className="text-muted text-xs font-body tracking-wide">
+                ▶ Watch — 4 min
+              </p>
+              <p className="text-muted text-xs font-body">
+                Why most founders stay invisible
+              </p>
+            </div>
           </div>
 
         </div>
