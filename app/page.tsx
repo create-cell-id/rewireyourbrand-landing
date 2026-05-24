@@ -1,49 +1,15 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 const BOOKING_URL = 'https://api.leadconnectorhq.com/widget/bookings/rewireyourbrand'
 const YOUTUBE_VIDEO_ID = 'fpK6HFwHJHE'
-
-// ─── NAV ─────────────────────────────────────────────────────────────────────
-
-function Nav({ scrolled }: { scrolled: boolean }) {
-  return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-bg/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
-        <span className="font-display text-lg font-bold text-ink tracking-tight">
-          Rewire Your Brand
-        </span>
-        <div className="flex items-center gap-6">
-          <a
-            href="https://mycontent.rewireyourbrand.com"
-            className="hidden sm:block text-sm text-muted hover:text-ink transition-colors duration-200 font-body"
-          >
-            Client Login
-          </a>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-body font-medium text-bg bg-ink px-5 py-2 hover:bg-accent transition-colors duration-200"
-          >
-            Book a Call
-          </a>
-        </div>
-      </div>
-    </nav>
-  )
-}
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center hero-grid overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center hero-grid overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -621,17 +587,8 @@ function Footer() {
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
     <main className="bg-bg text-ink overflow-x-hidden">
-      <Nav scrolled={scrolled} />
       <Hero />
       <Stats />
       <Problem />
