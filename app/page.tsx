@@ -51,22 +51,17 @@ function Hero() {
             'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(59,130,246,0.06) 0%, transparent 70%)',
         }}
       />
-      <div className="relative max-w-5xl mx-auto px-6 lg:px-12 w-full py-20 text-center">
-
-        {/* Eyebrow */}
-        <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-8">
-          Rewire Your Brand
-        </p>
+      <div className="relative max-w-5xl mx-auto px-6 lg:px-12 w-full py-10 text-center">
 
         {/* Headline */}
         <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-ink leading-[1.05] tracking-tight mb-6">
-          You Know Your Stuff.{' '}
-          <em className="not-italic text-gradient-gold">The Internet Doesn&apos;t Know You Yet.</em>
+          You&apos;re Good at What You Do.{' '}
+          <em className="not-italic text-gradient-gold">Someone Half as Qualified Is Getting the Deals.</em>
         </h1>
 
         {/* Sub headline */}
         <p className="text-muted text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto mb-12 font-body">
-          You press record. We handle everything after — scripting, editing, posting, DM management, and a full KPI report every month. You run the business. We build the audience.
+          You press record. We handle everything after: scripting, editing, posting, DM management, and a full KPI report every month. You run the business. We build the audience.
         </p>
 
         {/* Video */}
@@ -76,7 +71,7 @@ function Hero() {
         >
           <iframe
             src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=1`}
-            title="Rewire Your Brand — Watch This First"
+            title="Rewire Your Brand: Watch This First"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="absolute inset-0 w-full h-full"
@@ -180,7 +175,7 @@ function Stats() {
           }
           .counter-subtitle {
             font-size: 13px;
-            color: #B4C2D4;
+            color: #B8CFF5;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.12em;
@@ -360,7 +355,7 @@ const steps = [
   {
     num: '03',
     title: 'You Film. We Run It.',
-    body: 'Show up on camera. We handle every step after that — edits, captions, posting, DMs, and monthly KPI reporting.',
+    body: 'Show up on camera. We handle every step after: edits, captions, posting, DMs, and monthly KPI reporting.',
   },
 ]
 
