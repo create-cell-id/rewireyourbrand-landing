@@ -39,12 +39,21 @@ export const metadata: Metadata = {
     siteName: 'Rewire Your Brand',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: 'https://rewireyourbrand.com/ryb%20logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Rewire Your Brand',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Rewire Your Brand — 250K Views in 90 Days or We Work Free',
     description:
       'Our average client gets 250K organic views in 90 days — or we keep working for free. Done-with-you content strategy for founders.',
+    images: ['https://rewireyourbrand.com/ryb%20logo.png'],
   },
   robots: {
     index: true,
