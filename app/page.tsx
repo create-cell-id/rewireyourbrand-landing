@@ -37,7 +37,7 @@ function Hero() {
           style={{ boxShadow: '0 0 0 1px #1A2442, 0 0 80px rgba(59,130,246,0.14)' }}
         >
           <iframe
-            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=1`}
+            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0`}
             title="Rewire Your Brand: Watch This First"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -208,7 +208,7 @@ function Problem() {
           {/* Editorial photo — drop isaac-bw.jpg into public/ */}
           <div className="hidden lg:block relative h-[520px] overflow-hidden">
             <img
-              src="/isaac-bw.jpg"
+              src="/isaac.png"
               alt="Isaac De Persig"
               className="w-full h-full object-cover object-top"
               style={{ filter: 'grayscale(100%) contrast(1.05)' }}
@@ -439,94 +439,41 @@ function WhoItsFor() {
   return (
     <section className="py-16 lg:py-24 bg-surface border-t border-border">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
-        <div className="mb-10">
-          <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
-            Is This Right For You?
-          </p>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink leading-tight max-w-3xl">
-            Built for founders who are ready to stop being invisible.
-          </h2>
-        </div>
         <div className="grid lg:grid-cols-2 gap-px bg-border">
-          <div className="bg-surface p-8 lg:p-10 space-y-5">
-            {forList.map((item) => (
-              <div key={item} className="flex gap-4">
-                <span className="text-accent mt-1 shrink-0">
-                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-                    <path d="M3 9l4.5 4.5 7.5-9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-                <p className="text-ink text-base font-body leading-relaxed">{item}</p>
-              </div>
-            ))}
-          </div>
+          {/* YES */}
           <div className="bg-surface p-8 lg:p-10">
-            <p className="text-muted text-xs tracking-widest2 uppercase font-body font-medium mb-6">
-              Not a Good Fit If
+            <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-3">
+              This Is For You
             </p>
+            <h3 className="font-display text-2xl font-bold text-ink mb-8 leading-snug">
+              You are a fit if you recognise yourself here
+            </h3>
+            <div className="space-y-5">
+              {forList.map((item) => (
+                <div key={item} className="flex gap-4">
+                  <span className="text-accent mt-1 shrink-0 font-bold">✓</span>
+                  <p className="text-ink text-base font-body leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* NO */}
+          <div className="bg-surface p-8 lg:p-10">
+            <p className="text-[#EF4444] text-xs tracking-widest2 uppercase font-body font-medium mb-3">
+              This Is NOT For You
+            </p>
+            <h3 className="font-display text-2xl font-bold text-ink mb-8 leading-snug">
+              Move on if this sounds like you
+            </h3>
             <div className="space-y-5">
               {notForList.map((item) => (
                 <div key={item} className="flex gap-4">
-                  <span className="text-muted mt-1 shrink-0 text-sm">✕</span>
+                  <span className="text-[#EF4444] mt-1 shrink-0 font-bold">✕</span>
                   <p className="text-muted text-base font-body leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── FAQ ──────────────────────────────────────────────────────────────────────
-
-const faqs = [
-  {
-    q: 'Do I need professional equipment?',
-    a: 'No. An iPhone and decent lighting is all you need to film. We handle everything that makes the content look and sound professional.',
-  },
-  {
-    q: 'How quickly can I go live?',
-    a: 'Most clients are publishing content within 14 days of signing on. Onboarding is fast because we do the heavy lifting.',
-  },
-  {
-    q: 'What platforms do you post on?',
-    a: 'Instagram, LinkedIn, and YouTube. Every piece of content is reformatted and optimised for each platform.',
-  },
-  {
-    q: 'What if I have no audience yet?',
-    a: 'That is exactly who this is built for. We have taken founders from zero to thousands of followers using organic content only.',
-  },
-  {
-    q: 'How is this different from hiring a social media manager?',
-    a: 'A social media manager posts content. We build the strategy, write every script, produce and edit it, and manage your community. It is a full content operation, not just someone scheduling posts.',
-  },
-  {
-    q: 'How much does it cost?',
-    a: 'We do not list pricing publicly because it depends on your goals and what we are building. Book a call and we will walk you through what makes sense.',
-  },
-]
-
-function FAQ() {
-  return (
-    <section className="py-16 lg:py-24 border-t border-border bg-surface">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
-        <div className="mb-10">
-          <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
-            FAQ
-          </p>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink leading-tight">
-            Common Questions
-          </h2>
-        </div>
-        <div className="grid lg:grid-cols-2 gap-px bg-border">
-          {faqs.map((faq) => (
-            <div key={faq.q} className="bg-surface p-8 lg:p-10">
-              <h3 className="font-display text-lg font-semibold text-ink mb-3 leading-snug">{faq.q}</h3>
-              <p className="text-muted text-base font-body leading-relaxed">{faq.a}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>
@@ -621,7 +568,6 @@ export default function Home() {
       <Process />
       <Results />
       <WhoItsFor />
-      <FAQ />
       <FinalCTA />
       <Footer />
     </main>
