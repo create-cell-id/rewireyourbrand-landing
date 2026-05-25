@@ -53,9 +53,46 @@ export const metadata: Metadata = {
   },
 }
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Isaac De Persig',
+  url: 'https://rewireyourbrand.com',
+  jobTitle: 'Founder',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Rewire Your Brand',
+    url: 'https://rewireyourbrand.com',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/isaacdepersig/',
+    'https://youtube.com/@isaacdpersig',
+    'https://instagram.com/isaacdpersig',
+  ],
+}
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Rewire Your Brand',
+  url: 'https://rewireyourbrand.com',
+  description: 'Done-with-you content strategy for founders. 250K organic views in 90 days or we work for free.',
+  founder: { '@type': 'Person', name: 'Isaac De Persig' },
+  knowsAbout: ['content strategy', 'personal branding', 'founder brand', 'organic growth', 'social media strategy'],
+  sameAs: [
+    'https://www.linkedin.com/in/isaacdepersig/',
+    'https://youtube.com/@isaacdpersig',
+    'https://instagram.com/isaacdpersig',
+  ],
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
+      <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+      </head>
       <body className="font-body bg-bg text-ink">{children}</body>
     </html>
   )

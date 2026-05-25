@@ -466,6 +466,12 @@ function Footer() {
               <a href="mailto:hello@rewireyourbrand.com" className="text-sm text-muted hover:text-ink transition-colors font-body">hello@rewireyourbrand.com</a>
             </div>
             <div className="flex items-center gap-5">
+              <a href="https://www.linkedin.com/in/isaacdepersig/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted hover:text-ink transition-colors duration-200">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M7 10v7M7 7v.01M11 17v-4c0-1.1.9-2 2-2s2 .9 2 2v4M11 10v7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
               <a href="https://instagram.com/isaacdpersig" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted hover:text-ink transition-colors duration-200">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" />
