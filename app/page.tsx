@@ -276,12 +276,12 @@ const results = [
       'I don\'t have time to think about content. That\'s the honest truth. What sold me was that I literally just had to film. The quality of what they produce is better than anything I\'d have made on my own.',
   },
   {
-    metric: '2 Clients',
+    metric: '5 Clients',
     unit: 'From Content Alone',
     name: 'Marcus T.',
     role: 'Mortgage Broker',
     quote:
-      'Three months in and I\'ve had two clients tell me they found me through my content and felt like they already knew me before we even spoke. That\'s the ROI I was looking for.',
+      'Three months in and I\'ve had five clients tell me they found me through my content and felt like they already knew me before we even spoke. That\'s the ROI I was looking for.',
   },
 ]
 
