@@ -21,8 +21,9 @@ function Hero() {
 
         {/* Headline */}
         <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-[1.1] tracking-tight mb-6">
-          You&apos;ve been watching less qualified founders{' '}
-          <em className="not-italic text-gradient-gold">build the audience that should have been yours.</em>
+          Our average client gets{' '}
+          <em className="not-italic text-gradient-gold">250K views in the first 90 days</em>{' '}
+          of working together, or we work for free till we do.
         </h1>
 
         {/* Sub headline */}
