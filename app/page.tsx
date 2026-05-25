@@ -1,11 +1,14 @@
 'use client'
 
+import { useState } from 'react'
+
 const BOOKING_URL = 'https://api.leadconnectorhq.com/widget/bookings/rewireyourbrand'
 const YOUTUBE_VIDEO_ID = 'fpK6HFwHJHE'
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 
 function Hero() {
+  const [muted, setMuted] = useState(true)
   return (
     <section className="relative min-h-screen flex items-center hero-grid overflow-hidden">
       <div className="absolute inset-0 pointer-events-none hero-glow" />
@@ -40,7 +43,7 @@ function Hero() {
           style={{ boxShadow: '0 0 0 1px #1A2442, 0 0 80px rgba(59,130,246,0.14)' }}
         >
           <iframe
-            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0`}
+            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1&autoplay=1&mute=${muted ? 1 : 0}&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0`}
             title="Rewire Your Brand: Watch This First"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -48,6 +51,19 @@ function Hero() {
           />
           {/* Transparent overlay blocks click-to-pause */}
           <div className="absolute inset-0" style={{ zIndex: 1 }} />
+          {/* Unmute button */}
+          {muted && (
+            <button
+              onClick={() => setMuted(false)}
+              className="absolute bottom-4 right-4 flex items-center gap-2 bg-black/60 backdrop-blur-sm text-white text-xs font-body font-medium px-3 py-2 hover:bg-black/80 transition-colors"
+              style={{ zIndex: 2 }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0014 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+              </svg>
+              Tap to unmute
+            </button>
+          )}
         </div>
 
         {/* CTAs */}
