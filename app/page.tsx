@@ -350,12 +350,9 @@ function WhoItsFor() {
         <div className="grid lg:grid-cols-2 gap-px bg-border mb-12">
           {/* YES */}
           <div className="bg-surface p-8 lg:p-10">
-            <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-3">
+            <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-6">
               This Is For You
             </p>
-            <h3 className="font-display text-2xl font-bold text-ink mb-8 leading-snug">
-              You are a fit if you recognise yourself here
-            </h3>
             <div className="space-y-5">
               {forList.map((item) => (
                 <div key={item} className="flex gap-4">
@@ -367,12 +364,9 @@ function WhoItsFor() {
           </div>
           {/* NO */}
           <div className="bg-surface p-8 lg:p-10">
-            <p className="text-[#EF4444] text-xs tracking-widest2 uppercase font-body font-medium mb-3">
+            <p className="text-[#EF4444] text-xs tracking-widest2 uppercase font-body font-medium mb-6">
               This Is NOT For You
             </p>
-            <h3 className="font-display text-2xl font-bold text-ink mb-8 leading-snug">
-              Move on if this sounds like you
-            </h3>
             <div className="space-y-5">
               {notForList.map((item) => (
                 <div key={item} className="flex gap-4">
