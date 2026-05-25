@@ -17,10 +17,10 @@ function Hero() {
             'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(59,130,246,0.06) 0%, transparent 70%)',
         }}
       />
-      <div className="relative max-w-5xl mx-auto px-6 lg:px-12 w-full py-10 text-center">
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-12 w-full py-10 text-center">
 
         {/* Headline */}
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-[1.1] tracking-tight mb-6">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-ink leading-[1.1] tracking-tight mb-6">
           Our average client gets{' '}
           <em className="not-italic text-gradient-gold">250K views in the first 90 days</em>{' '}
           of working together, or we work for free till we do.
