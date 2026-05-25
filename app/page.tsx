@@ -1,7 +1,5 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-
 const BOOKING_URL = 'https://api.leadconnectorhq.com/widget/bookings/rewireyourbrand'
 const YOUTUBE_VIDEO_ID = 'fpK6HFwHJHE'
 
@@ -10,20 +8,14 @@ const YOUTUBE_VIDEO_ID = 'fpK6HFwHJHE'
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center hero-grid overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(59,130,246,0.06) 0%, transparent 70%)',
-        }}
-      />
+      <div className="absolute inset-0 pointer-events-none hero-glow" />
       <div className="relative max-w-6xl mx-auto px-6 lg:px-12 w-full py-10 text-center">
 
         {/* Headline */}
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-[1.1] tracking-tight mb-6">
+        <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-ink leading-[1.15] tracking-tight mb-6">
           Our average client gets{' '}
           <em className="not-italic text-gradient-gold">
-            250K views
+            250K views{' '}
             <br className="hidden lg:block" />
             in the first 90 days of working together,
           </em>
@@ -84,109 +76,6 @@ function Hero() {
   )
 }
 
-// ─── STATS ────────────────────────────────────────────────────────────────────
-
-function Stats() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!containerRef.current) return
-    const counters = containerRef.current.querySelectorAll('.counter-display')
-    const targets = [100000000, 30000, 1000]
-    const durations = [4000, 4000, 4000]
-
-    const formatNumber = (n: number): string => {
-      if (n >= 1_000_000) return (n / 1_000_000).toFixed(n % 1_000_000 === 0 ? 0 : 1) + 'M'
-      if (n >= 1_000) return (n / 1_000).toFixed(n % 1_000 === 0 ? 0 : 1) + 'K'
-      return n.toLocaleString()
-    }
-
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return
-      observer.disconnect()
-      counters.forEach((el, i) => {
-        const target = targets[i]
-        const steps = 60
-        const increment = target / steps
-        let current = 0
-        const interval = setInterval(() => {
-          current += increment
-          if (current >= target) {
-            el.textContent = formatNumber(target) + '+'
-            clearInterval(interval)
-          } else {
-            el.textContent = formatNumber(Math.floor(current)) + '+'
-          }
-        }, durations[i] / steps)
-      })
-    }, { threshold: 0.3 })
-
-    observer.observe(containerRef.current)
-    return () => observer.disconnect()
-  }, [])
-
-  return (
-    <section className="border-t border-b border-border bg-surface">
-      <div ref={containerRef} className="max-w-[1440px] mx-auto px-6 lg:px-10 py-4">
-        <style>{`
-          .stats-row {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: nowrap;
-          }
-          .stat-item {
-            text-align: center;
-            flex: 1;
-            min-width: 0;
-            padding: 24px 20px;
-          }
-          .counter-display {
-            font-family: var(--font-playfair), Georgia, serif;
-            font-size: 72px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #3B82F6 0%, #93C5FD 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-            margin-bottom: 8px;
-            white-space: nowrap;
-          }
-          .counter-subtitle {
-            font-size: 13px;
-            color: #B8CFF5;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            white-space: nowrap;
-          }
-          @media (max-width: 1024px) {
-            .stats-row { gap: 20px; }
-            .counter-display { font-size: 48px; }
-          }
-          @media (max-width: 768px) {
-            .stats-row { flex-direction: column; gap: 0; align-items: center; }
-            .stat-item { border-bottom: 1px solid #1A2442; }
-            .counter-display { font-size: 40px; }
-            .counter-subtitle { font-size: 11px; }
-          }
-        `}</style>
-        <div className="stats-row">
-          <div className="stat-item">
-            <div className="counter-display">0</div>
-            <div className="counter-subtitle">Organic Views</div>
-          </div>
-          <div className="stat-item">
-            <div className="counter-display">0</div>
-            <div className="counter-subtitle">Followers Built</div>
-          </div>
-          <div className="stat-item">
-            <div className="counter-display">0</div>
-            <div className="counter-subtitle">Organic Meetings Booked</div>
-          </div>
-        </div>
-      </div>
     </section>
   )
 }
@@ -574,7 +463,6 @@ export default function Home() {
   return (
     <main className="bg-bg text-ink overflow-x-hidden">
       <Hero />
-      <Stats />
       <Problem />
       <Services />
       <Process />
