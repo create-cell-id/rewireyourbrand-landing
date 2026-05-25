@@ -224,7 +224,7 @@ const steps = [
   {
     num: '03',
     title: 'Your Only Job Is to Film',
-    body: 'Film a short session on your phone each week. We handle every step after: edits, captions, posting, DMs, and your monthly KPI report.',
+    body: 'Film a short session on your phone each week. We handle every step after: edits, captions, posting, DMs, and your weekly KPI report.',
   },
 ]
 
