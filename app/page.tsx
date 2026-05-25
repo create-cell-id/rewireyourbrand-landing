@@ -20,16 +20,27 @@ function Hero() {
       <div className="relative max-w-6xl mx-auto px-6 lg:px-12 w-full py-10 text-center">
 
         {/* Headline */}
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-[1.1] tracking-tight mb-6 text-balance">
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-[1.1] tracking-tight mb-6">
           Our average client gets{' '}
-          <em className="not-italic text-gradient-gold">250K views in the first 90 days</em>{' '}
-          of working together, or we work for free till we do.
+          <em className="not-italic text-gradient-gold">
+            250K views
+            <br className="hidden lg:block" />
+            in the first 90 days of working together,
+          </em>
+          <br className="hidden lg:block" />
+          {' '}or we work for free till we do.
         </h1>
 
-        {/* Sub headline */}
-        <p className="text-muted text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto mb-10 font-body">
-          Film a short session on your phone each week. We write the scripts, edit the content, post across your platforms, manage your DMs, and send you the numbers every month.
-        </p>
+        {/* Sub headline — stat bar */}
+        <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 mb-10">
+          <span className="font-body text-sm font-semibold text-ink">100M+ <span className="font-normal text-muted">organic views</span></span>
+          <span className="text-border-light hidden sm:inline">·</span>
+          <span className="font-body text-sm font-semibold text-ink">30K <span className="font-normal text-muted">followers built</span></span>
+          <span className="text-border-light hidden sm:inline">·</span>
+          <span className="font-body text-sm font-semibold text-ink">1,000 <span className="font-normal text-muted">meetings booked</span></span>
+          <span className="text-border-light hidden sm:inline">·</span>
+          <span className="font-body text-sm font-semibold text-ink">zero <span className="font-normal text-muted">paid ads</span></span>
+        </div>
 
         {/* Video */}
         <div
@@ -43,6 +54,8 @@ function Hero() {
             allowFullScreen
             className="absolute inset-0 w-full h-full"
           />
+          {/* Transparent overlay blocks click-to-pause */}
+          <div className="absolute inset-0" style={{ zIndex: 1 }} />
         </div>
 
         {/* CTAs */}
@@ -208,7 +221,7 @@ function Problem() {
           {/* Editorial photo — drop isaac-bw.jpg into public/ */}
           <div className="hidden lg:block relative h-[520px] overflow-hidden">
             <img
-              src="/isaac.png"
+              src="/isaac energy.png"
               alt="Isaac De Persig"
               className="w-full h-full object-cover object-top"
               style={{ filter: 'grayscale(100%) contrast(1.05)' }}
@@ -439,7 +452,17 @@ function WhoItsFor() {
   return (
     <section className="py-16 lg:py-24 bg-surface border-t border-border">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-px bg-border">
+        {/* Section header */}
+        <div className="mb-10">
+          <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-4">
+            The Fit
+          </p>
+          <h2 className="font-display text-3xl lg:text-5xl font-bold text-ink leading-tight">
+            Is This For Me?
+          </h2>
+        </div>
+        {/* YES / NO grid */}
+        <div className="grid lg:grid-cols-2 gap-px bg-border mb-12">
           {/* YES */}
           <div className="bg-surface p-8 lg:p-10">
             <p className="text-accent text-xs tracking-widest2 uppercase font-body font-medium mb-3">
@@ -475,34 +498,23 @@ function WhoItsFor() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── FINAL CTA ────────────────────────────────────────────────────────────────
-
-function FinalCTA() {
-  return (
-    <section className="py-16 lg:py-20 border-t border-border text-center">
-      <div className="max-w-2xl mx-auto px-6 lg:px-10">
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-ink leading-tight mb-8">
-          Book a 30-Minute Strategy Call
-        </h2>
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-accent text-white text-base font-body font-semibold px-10 py-4 hover:bg-[#1D4ED8] transition-colors duration-200"
-        >
-          Book a Call
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M3.75 9h10.5M10.5 5.25L14.25 9l-3.75 3.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </a>
-        <p className="text-muted text-sm font-body mt-6">
-          No obligation, 30 minutes, and you will know exactly what we would build for you.
-        </p>
+        {/* CTA — merged into this section */}
+        <div className="text-center">
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-accent text-white text-base font-body font-semibold px-10 py-4 hover:bg-[#1D4ED8] transition-colors duration-200 whitespace-nowrap"
+          >
+            Book a 30-Minute Strategy Call
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3.75 9h10.5M10.5 5.25L14.25 9l-3.75 3.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+          <p className="text-muted text-sm font-body mt-4">
+            No obligation, 30 minutes, and you will know exactly what we would build for you.
+          </p>
+        </div>
       </div>
     </section>
   )
@@ -568,7 +580,6 @@ export default function Home() {
       <Process />
       <Results />
       <WhoItsFor />
-      <FinalCTA />
       <Footer />
     </main>
   )
